@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-size_t	digits(unsigned int nbr)
+static size_t	digits(unsigned int nbr)
 {
 	int dig;
 
@@ -25,14 +25,14 @@ size_t	digits(unsigned int nbr)
 	return (dig);
 }
 
-int		my_pow(int n, int pow)
+static int		my_pow(int n, int pow)
 {
 	if (pow == 0)
 		return (1);
 	return (n * my_pow(n, pow - 1));
 }
 
-char	*ft_itoa(int n)
+char			*ft_itoa(int n)
 {
 	size_t			i;
 	size_t			len;

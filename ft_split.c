@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-size_t	count_strs(const char *str, char c)
+static size_t	count_strs(const char *str, char c)
 {
 	size_t	i;
 	size_t	cnt;
@@ -35,7 +35,7 @@ size_t	count_strs(const char *str, char c)
 	return (cnt);
 }
 
-void	my_strcpy(char *dest, const char *src, size_t len)
+static void		my_strcpy(char *dest, const char *src, size_t len)
 {
 	size_t i;
 
@@ -48,7 +48,21 @@ void	my_strcpy(char *dest, const char *src, size_t len)
 	dest[i] = '\0';
 }
 
-char	**ft_split(char const *s, char c)
+static char		**all_free(char **dest, int n)
+{
+	int i;
+
+	i = 0;
+	while (i < n)
+	{
+		free(dest[i]);
+		i++;
+	}
+	free(dest);
+	return (NULL);
+}
+
+char			**ft_split(char const *s, char c)
 {
 	size_t	i;
 	size_t	len;
@@ -67,7 +81,7 @@ char	**ft_split(char const *s, char c)
 		while (s[i + len] != '\0' && s[i + len] != c)
 			len++;
 		if (!(dest[str_nbr] = malloc(sizeof(char) * (len + 1))))
-			return (NULL);
+			return (all_free(dest, str_nbr));
 		my_strcpy(dest[str_nbr], &s[i], len + 1);
 		str_nbr++;
 		i += len;

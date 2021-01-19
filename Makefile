@@ -6,16 +6,52 @@ CFLAGS	= -Wall	-Wextra	-Werror
 INCDIR	=	./
 HNAME	=	libft.h
 SRCDIR	=	./
-SRCNAME	=	ft_memset.c ft_bzero.c ft_memcpy.c ft_memccpy.c ft_memmove.c\
-			ft_memchr.c ft_memcmp.c ft_strlen.c ft_strlcpy.c ft_strlcat.c\
-			ft_strchr.c ft_strrchr.c ft_strnstr.c ft_strncmp.c ft_atoi.c\
-			ft_isalpha.c ft_isdigit.c ft_isalnum.c ft_isascii.c ft_isprint.c\
-			ft_toupper.c ft_tolower.c ft_calloc.c ft_strdup.c\
-			ft_substr.c ft_strjoin.c ft_strtrim.c ft_split.c ft_itoa.c\
-			ft_strmapi.c ft_putchar_fd.c ft_putstr_fd.c ft_putendl_fd.c ft_putnbr_fd.c\
+SRCNAME	=
+SRCNAME += ft_atoi.c
+SRCNAME += ft_bzero.c
+SRCNAME += ft_calloc.c
+SRCNAME += ft_isalnum.c
+SRCNAME += ft_isalpha.c
+SRCNAME += ft_isascii.c
+SRCNAME += ft_isdigit.c
+SRCNAME += ft_isprint.c
+SRCNAME += ft_itoa.c
+SRCNAME += ft_memccpy.c
+SRCNAME += ft_memchr.c
+SRCNAME += ft_memcmp.c
+SRCNAME += ft_memcpy.c
+SRCNAME += ft_memmove.c
+SRCNAME += ft_memset.c
+SRCNAME += ft_putchar_fd.c
+SRCNAME += ft_putendl_fd.c
+SRCNAME += ft_putnbr_fd.c
+SRCNAME += ft_putstr_fd.c
+SRCNAME += ft_split.c
+SRCNAME += ft_strchr.c
+SRCNAME += ft_strdup.c
+SRCNAME += ft_strjoin.c
+SRCNAME += ft_strlcat.c
+SRCNAME += ft_strlcpy.c
+SRCNAME += ft_strlen.c
+SRCNAME += ft_strmapi.c
+SRCNAME += ft_strncmp.c
+SRCNAME += ft_strnstr.c
+SRCNAME += ft_strrchr.c
+SRCNAME += ft_strtrim.c
+SRCNAME += ft_substr.c
+SRCNAME += ft_tolower.c
+SRCNAME += ft_toupper.c
 			
-BONUSNAME =	ft_lstnew.c ft_lstadd_front.c ft_lstsize.c ft_lstlast.c ft_lstadd_back.c\
-			ft_lstdelone.c ft_lstclear.c ft_lstiter.c ft_lstmap.c
+BONUSNAME =	
+BONUSNAME += ft_lstadd_back.c
+BONUSNAME += ft_lstadd_front.c
+BONUSNAME += ft_lstclear.c
+BONUSNAME += ft_lstdelone.c
+BONUSNAME += ft_lstiter.c
+BONUSNAME += ft_lstlast.c
+BONUSNAME += ft_lstmap.c
+BONUSNAME += ft_lstnew.c
+BONUSNAME += ft_lstsize.c
 
 SRCS	=	$(addprefix $(SRCDIR),$(SRCNAME))
 HEADERS	=	$(addprefix $(INCDIR),$(HNAME))
